@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic HTML</title>
+</head>
+<body>
+    <!--  we are creating the heading, span tags... inside  the root div in our html file  so react knows where to put the element -->
+    <div id="root">
+        <span id="title">Not render yet.</span>
+    </div>
+</body>
+<!--   core react library ==> this will give access to react. to create element using react -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<!--   react-dom library ==> this will give access to react-dom. to render the element using react || to modify the data in the dom -->
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> 
+<script>
+        // creating heading element using pure react
+        const heading = React.createElement('h1', {
+            id: 'title'
+        }, "doing dynamically using React"); //need to pass three element --> tag_name, {}, what we put inside the tag
+        <!-- this will give us the object -->
+           console.log(heading); 
+
+        // getting root element to append the h1 element
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        // appending the h1 element to root element
+        root.render(heading); // whatever we are pass in render method it is injecting in the root div & react will override the root div (whatever is there existing inside the root ) with the heading element  (react will replace it with whatever we are passing in render method)
+
+</script>
+</DOCTYPE>
+   
+<!--  CDN stands for  Content Delivery Network
+     we are injecting cdn links to our html file using script tag
+    we are getting react and react-dom libraries using cdn links
+    root & render () wiill be write in single time in our code & everything else will be write inside it. 
+
+    {} ==> this is the props object, this is used for passing the data to the tag attributes. 
+           all the tag attributes are comming from the props object.
+    Render method is used to modify the DOM. 
+ -->
