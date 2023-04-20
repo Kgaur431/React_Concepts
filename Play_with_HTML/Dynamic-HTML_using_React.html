@@ -1,4 +1,4 @@
-<DOCTYPE html>
+< html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -10,10 +10,10 @@
         <span id="title">Not render yet.</span>
     </div>
 </body>
-<!--   core react library ==> this will give access to react. to create element using react -->
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<!--   react-dom library ==> this will give access to react-dom. to render the element using react || to modify the data in the dom -->
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> 
+<!--&lt;!&ndash;   core react library ==> this will give access to react. to create element using react &ndash;&gt;-->
+<!--<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>-->
+<!--&lt;!&ndash;   react-dom library ==> this will give access to react-dom. to render the element using react || to modify the data in the dom &ndash;&gt;-->
+<!--<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 <script>
         // creating heading element using pure react
         const heading = React.createElement('h1', {
@@ -28,7 +28,7 @@
         root.render(heading); // whatever we are pass in render method it is injecting in the root div & react will override the root div (whatever is there existing inside the root ) with the heading element  (react will replace it with whatever we are passing in render method)
 
 </script>
-</DOCTYPE>
+</html>
    
 <!--  CDN stands for  Content Delivery Network
      we are injecting cdn links to our html file using script tag
@@ -39,3 +39,18 @@
            all the tag attributes are comming from the props object.
     Render method is used to modify the DOM. 
  -->
+
+<!--  Own Create React App branch -->
+<!-- HERE, we are use react using cdn links which is in local.
+
+    what happen when react new version is released? like 18 to 19.
+        then we have to again go to cdn & get the new url for the React library. do the same stuff.
+
+    CDN, is hosted on the un-pkg.com server.
+    Node Modules has on our server either in the local or in the cloud with the help of package-lock.json file.
+        so, fetching the React library from the other CDN server is not a good idea.
+        so, we are going to use the React library from the node modules folder. it will be faster. because it is on our server.
+            so, we will install React & React-dom library in our project folder.
+                by doing ==>  npm install react react-dom
+   we will not do npm install -d react react-dom because we want to use this library in our production environment.
+-->
