@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React App</title>
+    <link ref="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div id="root"> Not Rendered </div>
+        <!-- <script src="App.js"></script> -->
+        <script type="module" src="App.js"></script>
+    </body>
+</html>
+
+<!-- 
+    when we do npx parcel index.html then browser will execute the script tag in the index.html file. 
+        and then browser will throw an error. This is because we are using the react library. means 
+        we are using import (react) in the App.js file. & browser don't know about the import statement. 
+        so, we need to specify that App.js is not an normal javascript file. it is a module. This is 
+        done by adding type="module" in the script tag.
+-->
